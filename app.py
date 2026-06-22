@@ -25,9 +25,8 @@ if st.button("Predict"):
         "exang": exang, "oldpeak": oldpeak, "slope": slope, "ca": ca, "thal": thal
     }
     
-    response = requests.post("https://heart-disease-api.onrender.com/predict", json=data)
-    result = response.json()
     
+    response = requests.post("https://heart-disease-api-exzj.onrender.com/predict", json=data)       result = response.json()
     if result["prediction"] == "High Risk":
         st.error(f"High Risk of Heart Disease (Probability: {result['probability_of_disease']})")
     else:
